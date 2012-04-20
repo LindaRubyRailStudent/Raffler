@@ -40,10 +40,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile.lock" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile.lock" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="0" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.34318182">
+            <state line="114" column="0" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="7" selection-start="165" selection-end="165" vertical-scroll-proportion="0.31850117">
               <folding />
             </state>
           </provider>
@@ -68,7 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/collections/companies.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/models/company.js.coffee" />
         <option value="$PROJECT_DIR$/app/views/main/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/entries/index.js.coffee" />
@@ -84,6 +92,7 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/companies/index.js.coffee" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Gemfile.lock" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -435,7 +444,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="682" y="42" width="692" height="569" extended-state="1" />
+    <frame x="682" y="42" width="692" height="569" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -510,11 +519,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/main/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="75" selection-start="110" selection-end="110" vertical-scroll-proportion="0.031835206" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/companies_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="46" selection-start="384" selection-end="384" vertical-scroll-proportion="0.5889764" />
@@ -599,7 +603,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="0" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.34318182">
+        <state line="114" column="0" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="7" selection-start="165" selection-end="165" vertical-scroll-proportion="0.31850117">
           <folding />
         </state>
       </provider>
