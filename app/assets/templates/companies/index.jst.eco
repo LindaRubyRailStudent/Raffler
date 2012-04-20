@@ -1,0 +1,4 @@
+<h1>Companies</h1>
+<input type="button" value="DrawMap" id="drawMap"/>
+<div id="map">Map should go here</div>
+<%= @companies %>
