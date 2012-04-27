@@ -1,4 +1,14 @@
 <h1>Companies</h1>
 <input type="button" value="DrawMap" id="drawMap"/>
-<div id="map">Map should go here</div>
-<%= @companies %>
+<input type="button" value="DrawMap2" id="drawMap2"/>
+<input type="button" value="New Map" id="newMap"/>
+<input type="button" value="Drill Down Chart" id="drillDownChart"/>
+
+<form class="newChart">
+  <input type="text" >
+  <input type="submit" value="Get Chart">
+</form>
+
+<div id="map" style="width: 100%; height: 500px;"><%= @companies.length%></div>
+<div id="details" style="width: 100%; height: 500px;"><%= @companies.length%></div>
+

@@ -26,10 +26,17 @@ class Raffler.Views.EntriesIndex extends Backbone.View
   createEntry: (event) ->
     event.preventDefault()
     attributes = name: $('#new_entry_name').val()
-    @collection.create attributes,
-      wait: true
-      success: -> $('#new_entry')[0].reset()
-      error: @handleError
+    if attributes.name == "<script>"
+      alert "you may not use a <script> tag"
+    if attributes.name == "<tag>"
+      alert "you may not use a <tag> tag"
+    if attributes.name =="'"
+      alert "protecting against an SQL injection"
+    else
+      @collection.create attributes,
+        wait: true
+        success: -> $('#new_entry')[0].reset()
+        error: @handleError
       
   handleError: (entry, response) ->
     if response.status == 422
@@ -39,3 +46,10 @@ class Raffler.Views.EntriesIndex extends Backbone.View
 
   newFunction: ->
     alert @collection
+
+  validate:(attributes) ->
+    if attributes.name == ""
+      alert "name cannot be blank"
+      return false
+    else
+      return true

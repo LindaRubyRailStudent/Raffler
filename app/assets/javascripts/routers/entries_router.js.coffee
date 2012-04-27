@@ -6,7 +6,6 @@ class Raffler.Routers.Entries extends Backbone.Router
   initialize: ->
     @collection = new Raffler.Collections.Entries()
     @collection.reset($('#container').data('entries'))
-    @company = new Raffler.Collections.Companies()
 
   index: ->
     view = new Raffler.Views.EntriesIndex(collection: @collection)
@@ -14,3 +13,7 @@ class Raffler.Routers.Entries extends Backbone.Router
 
   show: (id) ->
     alert "Entry #{id}"
+
+
+
+

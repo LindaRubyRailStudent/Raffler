@@ -1,0 +1,1 @@
+class Raffler.Models.Funding extends Backbone.Model
