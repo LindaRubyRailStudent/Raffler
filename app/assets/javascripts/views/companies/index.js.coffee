@@ -1,6 +1,7 @@
 class Raffler.Views.CompaniesIndex extends Backbone.View
 
   template: JST['companies/index']
+  templateEntries: JST['']
 
   events:
     'click #drawMap': 'drawVisualisation'
@@ -8,6 +9,8 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
     'click #newMap': 'newMap'
     'click .newChart': 'newChart'
     'click #drillDownChart': 'setChart'
+    'click #newView': 'newView'
+    'click #drawMarkersMap': 'drawMarkersMap'
   initialize: ->
     @company = @collection[0]
     @company.on('reset', @render, this)
@@ -16,6 +19,10 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
   render: ->
 	  $(@el).html(@template(companies: @collection))
 	  this
+
+  renderEntries: ->
+    $(@el).html(@templateEntries(companies: @collection))
+    this
 
   drawVisualisation: ->
     options = {
@@ -30,7 +37,6 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
     @loadMaps()
 
   drawMarkersMap:->
-    alert "Draw Markers Map"
     data = new google.visualization.DataTable()
     data.addColumn "string", "City"
     data.addColumn "number", "Population"
@@ -53,6 +59,7 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
        packages: ['geochart']
        callback: ->
          (CompaniesIndex.prototype.drawMarkersMap())
+
 
   newMap: ->
     this.$('#map')[0].innerHTML="somenwords"
@@ -217,6 +224,10 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
         data: data
         color: "blue"]
     )
+
+  newView: ->
+    @renderEntries()
+
 
 
 

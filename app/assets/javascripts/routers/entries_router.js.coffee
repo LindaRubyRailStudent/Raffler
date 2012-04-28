@@ -1,6 +1,6 @@
 class Raffler.Routers.Entries extends Backbone.Router
   routes:
-    '': 'index'
+    'entries': 'index'
     'entries/:id': 'show'
 
   initialize: ->

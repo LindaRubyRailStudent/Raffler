@@ -1,6 +1,6 @@
 class Raffler.Routers.Companies extends Backbone.Router
   routes:
-    'companies': 'index'
+    '': 'index'
     'companies/:id' : 'show'
 
   initialize: ->

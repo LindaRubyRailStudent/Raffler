@@ -32,6 +32,8 @@ class Raffler.Views.EntriesIndex extends Backbone.View
       alert "you may not use a <tag> tag"
     if attributes.name =="'"
       alert "protecting against an SQL injection"
+    if attributes.name.length > 20
+      alert "You many not use more than 20 characters"
     else
       @collection.create attributes,
         wait: true

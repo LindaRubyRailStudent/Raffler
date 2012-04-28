@@ -22,7 +22,7 @@ a {
 }
 
 #container {
-  width: 600px;
+  width: 70%;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
@@ -34,9 +34,9 @@ form input {
   font-size: 20px;
 }
 form input[type='text'] {
-  width: 535px;
+  width: 90%;
 }
-form input[type='submit'], #draw {
+form input[type='submit'], #draw, button, #drawMap, #drawMap2, #newMap, #drillDownChart, #drawMarkersMap {
   -webkit-appearance: caret;
 	font-size: 14px;
   font-size: 13px;
@@ -47,10 +47,10 @@ form input[type='submit'], #draw {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   color: #FFF;
-  background: #24882B;
-  background: -webkit-gradient(linear, left top, left bottom, from(#32BE39), to(#247B28));
-  background: -moz-linear-gradient(top,  #32BE39,  #247B28);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32BE39', endColorstr='#247B28');
+  background: rgba(103, 132, 186, 0.98);
+  background: -webkit-gradient(linear, left top, left bottom, from(#1D82AD), to(#52B4DE));
+  background: -moz-linear-gradient(top,  #1D82AD,  #52B4DE);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1D82AD', endColorstr='#52B4DE');
   text-decoration: none;
   text-shadow: 0 -1px 0 #036;
   text-align: middle;
