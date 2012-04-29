@@ -7,15 +7,18 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
     'click #drawMap': 'drawVisualisation'
     'click #drawMap2': 'drawMap2'
     'click #newMap': 'newMap'
-    'click .newChart': 'newChart'
+    'submit .newChart': 'newChart'
     'click #drillDownChart': 'setChart'
     'click #newView': 'newView'
     'click #drawMarkersMap': 'drawMarkersMap'
+
   initialize: ->
     @company = @collection[0]
     @company.on('reset', @render, this)
     @funding = @collection[1]
-  
+    @loadMaps()
+
+
   render: ->
 	  $(@el).html(@template(companies: @collection))
 	  this
@@ -39,17 +42,27 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
   drawMarkersMap:->
     data = new google.visualization.DataTable()
     data.addColumn "string", "City"
-    data.addColumn "number", "Population"
-    data.addColumn "number", "Area"
+    data.addColumn "number", "Funding"
+    data.addColumn "number", "Yeaar"
     data.addRows [
-      [ "Dublin", 2761477, 1285.31 ],
-      [ "Cork", 1324110, 181.76 ],
-      [ "Galway", 959574, 117.27 ]]
-    options =
-        region: "IE"
-        displayMode: "markers"
-        colorAxis:
-          colors: [ "green", "blue" ]
+      [ "Cavan", 0, 2012 ],
+      [ "Cork", 160000, 2012 ],
+      [ "Dublin", 3195000, 2012 ],
+      [ "Galway", 820000, 2012 ],
+      [ "Kildare", 40000, 2012 ],
+      [ "Meath", 40000, 2012 ],
+      [ "Sligo", 210000, 2012 ]]
+    options = {}
+    options["region"]= "IE"
+    options['colors']= ['#CCCCFF','#000033']
+    options["dataMode"] = "markers"
+    options["resolution"]= "provinces"
+
+    selectHandler = (e) ->
+      selection = chart.getSelection()
+      row = selection[0].row
+      alert "You selected " + data.getValue(row, 0)
+      google.visualization.events.addListener geochart, "select", selectHandler
 
     chart = new google.visualization.GeoChart(this.$("#map")[0])
     chart.draw data, options
@@ -59,7 +72,6 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
        packages: ['geochart']
        callback: ->
          (CompaniesIndex.prototype.drawMarkersMap())
-
 
   newMap: ->
     this.$('#map')[0].innerHTML="somenwords"
@@ -103,7 +115,7 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
       company = @company.models[i].get('fundings')
       j = 0
       while j < company.length
-        if company[j].year == event.currentTarget.elements[0].value
+        if company[j].year == event.currentTarget[1].value
           amount = company[j].amount
           series.data.push(amount)
         j++

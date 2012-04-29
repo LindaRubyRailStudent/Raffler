@@ -1,14 +1,57 @@
-<h1>THEATRE FUNDING</h1>
-<input type="button" value="View Google Map" id="drawMap"/>
-<input type="button" value="DrawMap2" id="drawMap2"/>
-<input type="button" value="About" id="newMap"/>
-<input type="button" value="Drill Down Chart" id="drillDownChart"/>
-<input type="button" value="Draw Visualisation" id="drawMarkersMap"/>
-<form class="newChart">
-  <input type="text" >
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+        <li><a class="brand" href="#">
+          THEATRE FUNDING
+        </a></li>
+
+        <li id="drawMap">
+          <a href="#">View Google Map </a>
+        </li>
+        <li id=drawMap2><a href="#">DrawMap2</a></li>
+        <li id="newMap"><a href="#">About</a></li>
+        <li id="drillDownChart"><a href="#">Drill Chart</a></li>
+        <li id="drawMarkersMap"><a href="#">Visualisation</a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--<h1>THEATRE FUNDING</h1> -->
+<!--<input type="button" value="View Google Map" id="drawMap"/> -->
+<!--<input type="button" value="DrawMap2" id="drawMap2"/>-->
+<!--<input type="button" value="About" id="newMap"/> -->
+<!--<input type="button" value="Drill Down Chart" id="drillDownChart"/>
+<input type="button" value="Draw Visualisation" id="drawMarkersMap"/>  -->
+<!--<form class="newChart">
+  <input type="text">
   <input type="submit" value="Get Chart">
-</form>
+</form> -->
+
+
 
 <div id="map" style="width: 100%; height: 500px;"></div>
-<div id="details" style="width: 100%; height: 500px;"><%= @companies.length%></div>
+<div id="details" style="width: 100%; height: 500px;">
+  <form class="newChart form-inline">
+    <fieldset>
+      <div class="control-group">
+        <label class="control-label" for="select01">Select list</label>
+        <div class="controls">
+          <select id="select01">
+            <option>2012</option>
+            <option>2011</option>
+            <option>2010</option>
+            <option>2009</option>
+            <option>2008</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit">Get Funding</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
 
