@@ -11,12 +11,17 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
     'click #drillDownChart': 'setChart'
     'click #newView': 'newView'
     'click #drawMarkersMap': 'drawMarkersMap'
+    'click .carousel': 'carousel'
 
   initialize: ->
     @company = @collection[0]
     @company.on('reset', @render, this)
     @funding = @collection[1]
     @loadMaps()
+
+
+  carousel: ->
+    $(".carousel")[0].carousel() interval: 500
 
 
   render: ->
@@ -28,13 +33,49 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
     this
 
   drawVisualisation: ->
-    options = {
+    chart = new Highcharts.Chart(
+      chart:
+        renderTo: this.$('#map')[0]
+        plotBackgroundColor: null
+        plotBorderWidth: null
+        plotShadow: false
+
+      title:
+        text: "Funding of Theatre Companies"
+
+      tooltip:
+            formatter: ->
+              "<b>" + @point.name + "</b>: " + @percentage + " %"
+
+      plotOptions:
+            pie:
+              allowPointSelect: true
+              cursor: "pointer"
+              dataLabels:
+                enabled: true
+                color: "#000000"
+                connectorColor: "#000000"
+                formatter: ->
+                  "<b>" + @point.name + "</b>: " + @percentage + " %"
+      series: [
+        type: "pie"
+        name: "Funding Share"
+        data: [ [ "Druid", 6.9 ], [ "Dublin Theatre Festival", 6.45 ],
+          name: "Abbey"
+          y: 58.99
+          sliced: true
+          selected: true
+        ,[ "Fishamble", 2.02 ],[ "Gate", 8.22 ],[ "Irish Theatre Institue", 1.68 ],[ "Pan Pan Theatre", 1.93 ],[ "Rough Magic", 4.8 ],[ "Second Age", 1.34 ],[ "Theatre Forum", 1.05 ],[ "Others", 2.17 ] ]
+      ]
+    )
+    ###options = {
       zoom: 6
       center: new google.maps.LatLng(39,-98)
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     @map = new google.maps.Map(this.$('#map')[0],options)
-    this.$('#map')[0].innerHTML = @map
+    this.$('#map')[0].innerHTML = @map###
+
 
   drawMap2: ->
     @loadMaps()
@@ -73,8 +114,10 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
        callback: ->
          (CompaniesIndex.prototype.drawMarkersMap())
 
+
   newMap: ->
-    this.$('#map')[0].innerHTML="somenwords"
+    $(@el).html(@template(companies: @collection))
+    this
 
   newChart: (event) ->
     event.preventDefault()
@@ -239,6 +282,9 @@ class Raffler.Views.CompaniesIndex extends Backbone.View
 
   newView: ->
     @renderEntries()
+
+  pieChart: ->
+
 
 
 

@@ -5,14 +5,13 @@
         <li><a class="brand" href="#">
           THEATRE FUNDING
         </a></li>
-
-        <li id="drawMap">
-          <a href="#">View Google Map </a>
-        </li>
-        <li id=drawMap2><a href="#">DrawMap2</a></li>
         <li id="newMap"><a href="#">About</a></li>
+        <li id="drawMap">
+          <a href="#"> Funding PieChart </a>
+        </li>
+       <!-- <li id=drawMap2><a href="#">DrawMap2</a></li> -->
         <li id="drillDownChart"><a href="#">Drill Chart</a></li>
-        <li id="drawMarkersMap"><a href="#">Visualisation</a></li>
+        <li id="drawMarkersMap"><a href="#">Funding Map</a></li>
 
       </ul>
     </div>
@@ -32,7 +31,20 @@
 
 
 
-<div id="map" style="width: 100%; height: 500px;"></div>
+<div id="map" style="width: 100%; height: 500px;">
+  <div id="myCarousel" class="carousel">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item"><img src="Funding.JPG"/> </div>
+      <div class="item"><img src="FundingDown.png"/> </div>
+      <div class="item"><img src="FundingDown2.png"/> </div>
+      <div class="item"><img src="FundingDown3.png"/> </div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+</div>
 <div id="details" style="width: 100%; height: 500px;">
   <form class="newChart form-inline">
     <fieldset>
@@ -54,4 +66,5 @@
     </fieldset>
   </form>
 </div>
+
 

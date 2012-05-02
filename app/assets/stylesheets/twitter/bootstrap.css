@@ -4824,7 +4824,8 @@ a.badge:hover {
 }
 
 .carousel .item > img {
-  display: block;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1;
 }
 

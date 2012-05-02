@@ -15,4 +15,7 @@
 //= require_tree .//views
 //= require_tree .//routers
 //= require bootstrap
+//= require bootstrap-carousel
 //= require_tree .
+
+
